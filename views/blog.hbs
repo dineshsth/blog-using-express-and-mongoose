@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="stylesheets/default.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+{{>header}}
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+<div id="content-wrap">
+
+   	<div class="row" class="twevel columns">
+{{# if items}}
+<div id="main" >
+  {{# each items }}
+  <div class="three columns">
+    <div class="card">
+      <a href="/blog:{{this._id}}"><img src="upload/{{this.image}}" style="width:100%"></a>
+      <div class="container">
+        <h2><b>{{this.heading}}</b></h2>
+        <h2><b>{{this.date}}</b></h2>
+        <p>{{this.title}}</p>
+      </div>
+      </div>
+  </div>
+  {{/each}}
+
+
+</div> <!-- main End -->
+{{else}}
+  <div>
+    <h1>Currently there is no any blog. please add new post</h1>
+      <br>
+    <a href="/post" color="red"><button type="button" name="button">Add New post </button></a>
+  </div>
+{{/if}}
+
+
+
+
+
+
+   </div> <!-- end content-wrap -->
+{{>footer}}

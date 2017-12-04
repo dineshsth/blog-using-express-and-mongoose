@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="stylesheets/default.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+{{> header}}
+<div id="content-wrap">
+
+   	<div class="row">
+
+      <div id="main" class="twelve columns">
+
+   			<article class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							{{items.heading}}
+						</h2>
+
+						<div class="entry-meta">
+							<ul>
+								<li>{{items.date}}</li>
+								<span class="meta-sep">&bull;</span>
+								<li>
+
+								</li>
+								<span class="meta-sep">&bull;</span>
+								<li>{{items.title}}</li>
+							</ul>
+						</div>
+
+					</header>
+
+					<div class="entry-content-media">
+						<div class="post-thumb" >
+							<img src="upload/{{items.image}}">
+						</div>
+					</div>
+
+					<div class="entry-content">
+						<p class="lead">{{items.description}}</p>
+					</div>
+
+
+
+  			       <!-- <ul class="post-nav group">
+  			            <li class="prev"><a rel="prev" href="#"><strong>Previous Article</strong> Duis Sed Odio Sit Amet Nibh Vulputate</a></li>
+  				         <li class="next"><a rel="next" href="#"><strong>Next Article</strong> Morbi Elit Consequat Ipsum</a></li>
+  			        </ul> -->
+
+				</article>
+<hr>
+				<!-- Comments
+            ================================================== -->
+
+
+
+               <!-- respond -->
+               <div class="respond">
+
+                  <h3>Leave a Comment</h3>
+
+                  <!-- form -->
+                  <form name="contactForm" id="contactForm" method="post" action="">
+  					   <fieldset>
+
+                     <div class="group">
+  						      <label for="cName">Name <span class="required">*</span></label>
+  						      <input name="cName" type="text" id="cName" size="35" value="" />
+                     </div>
+
+                     <div class="group">
+  						      <label for="cEmail">Email <span class="required">*</span></label>
+  						      <input name="cEmail" type="text" id="cEmail" size="35" value="" />
+                     </div>
+
+
+
+                     <div class="message group">
+                        <label  for="cMessage">Message <span class="required">*</span></label>
+                        <textarea name="cMessage"  id="cMessage" rows="10" cols="50" ></textarea>
+                     </div>
+
+                     <button type="submit" class="submit">Submit</button>
+
+  					   </fieldset>
+  				      </form> <!-- Form End -->
+
+               </div> <!-- Respond End -->
+
+            </div>  <!-- Comments End -->
+
+
+   		<!-- </div> <!-- main End -->
+
+
+
+
+
+   </div> <!-- end content-wrap -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+  {{> footer}}
+</div>
+</div>

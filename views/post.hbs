@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="stylesheets/default.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+{{> header}}
+<style>
+
+</style>
+<div class="container">
+<div class="col-md-12">
+    <div class="form-area" align="center">
+        <form role="form" action="/post" method="post" enctype="multipart/form-data">
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Post</h3>
+    				<div class="form-group" >
+						<input type="text" class="form-control" id="name" name="heading" placeholder="Heading" required>
+					</div>
+          <div class="form-group" >
+          <input type="text" class="form-control" id="name" name="title" placeholder="Title" required>
+        </div>
+
+
+                    <div class="form-group">
+                    <textarea class="form-control" type="textarea" name="description" id="message" placeholder="Description" maxlength="1000" rows="9"></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                    </div>
+
+                    <div class="form-group" id="pad">
+          						<input type="file" name="image" accept="image/*" required>
+          					</div>
+                    <br/>
+
+          <button type="submit" id="submit" class="btn btn-primary ">Post</button>
+          <button type="button" id="cancel" class="btn btn-danger">Cancel</button>
+
+        </form>
+    </div>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('#characterLeft').text('1000 characters left');
+  $('#message').keydown(function () {
+      var max = 1000;
+      var len = $(this).val().length;
+      if (len >= max) {
+          $('#characterLeft').text('You have reached the limit');
+          $('#characterLeft').addClass('red');
+          $('#btnSubmit').addClass('disabled');
+      }
+      else {
+          var ch = max - len;
+          $('#characterLeft').text(ch + ' characters left');
+          $('#btnSubmit').removeClass('disabled');
+          $('#characterLeft').removeClass('red');
+      }
+  });
+});
+</script>
